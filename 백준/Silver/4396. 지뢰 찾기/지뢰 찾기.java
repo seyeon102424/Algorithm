@@ -22,14 +22,12 @@ public class Main{
             String[] str = s.next().split("");
             for(int j=0; j<n; j++){
                 play[i][j] = str[j];
-                result[i][j] = ".";
-            }
-        }
-        for(int i=0; i<n; i++){
-            for(int j=0; j<n; j++){
-                if(play[i][j].equals("x")){
+                
+                if(play[i][j].equals(".")){result[i][j] = ".";}
+                else{
                     if(map[i][j].equals("*")){
                         flag = false;
+                        //break;
                     }
                     else{
                         for(int k=0; k<8; k++){
@@ -47,6 +45,7 @@ public class Main{
                     } 
                 }
             }
+            //if(!flag){break;}
         }
         
         for(int i=0; i<n; i++){
